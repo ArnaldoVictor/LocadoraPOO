@@ -28,7 +28,7 @@ public class Filme{
         return this.copias;
     }
     
-    public void setCopias(Copia copia){
+    public void addCopia(Copia copia){
         this.copias.add(copia);
     }
     

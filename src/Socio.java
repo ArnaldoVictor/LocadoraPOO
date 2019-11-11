@@ -63,7 +63,7 @@ public class Socio{
     }
 
     public void printLocacoes(){
-        System.out.println("--------------- Histórico de Locacões ---------------");
+        System.out.println("--------------- Historico de Locacoes ---------------");
 		for (Locacao x : this.locacoes){
             x.printLocacao();
 		}

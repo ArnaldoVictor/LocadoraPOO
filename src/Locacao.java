@@ -36,15 +36,14 @@ public class Locacao{
         this.data = data;
     }
 
-    
     public void printLocacao(){
         System.out.println("Codigo:"+this.codigo);
         System.out.println("Socio: "+this.socio.getNome());
         for (Copia x : this.filmes){
             System.out.println("Filme : "+x.getFilme().getTitulo()+"\nCopias: "+x.getQuantidade());
-            System.out.println("---------------");
 		}
         System.out.println("Data da Locacao: "+this.data.getInstance().getTime());
+        System.out.println("-----------------------------------------------------");
     }
 
 
