@@ -7,12 +7,14 @@ public class Main{
         Endereco end1 = new Endereco("Rua 9", 10, "60789-30", "Fortaleza", "Serrinha");
 
         // FILMES
-        Filme f1 = new Filme("Doutor Sono", 9120, 2019, "AVI");
-        Copia c1 = new Copia(f1, 2);
-        Filme f2 = new Filme("Coringa", 7320, 2019, "AVI");
-        Copia c2 = new Copia(f2, 10);
-        Filme f3 = new Filme("Se Eu Fosse Você", 5640, 2006, "AVI");
-        Copia c3 = new Copia(f3, 6);
+        Filme f1 = new Filme("Doutor Sono", 9120, 2019, "DVD");
+        Filme f2 = new Filme("Coringa", 7320, 2019, "DVD");
+        Filme f3 = new Filme("Se Eu Fosse Você", 5640, 2006, "DVD");
+        
+        //COPIAS
+        Copia c1 = new Copia(f1, 2, 5.90);
+        Copia c2 = new Copia(f2, 10, 8.80);
+        Copia c3 = new Copia(f3, 6, 2.30);
         
         // SOCIO
         Calendar datas1 = Calendar.getInstance();
@@ -21,15 +23,21 @@ public class Main{
         //ALUGUEL
         int codigo1 = (int)(Math.random() * 10000);
         Locacao l1 = new Locacao(codigo1, s1, c1);
+        l1.addFilme(c2);
+        l1.setTotal(l1.getTotal()+c1.getPreco()+c2.getPreco());
+
         int codigo2 = (int)(Math.random() * 10000);
         Locacao l2 = new Locacao(codigo2, s1, c2);
+        l2.setTotal(l2.getTotal()+c2.getPreco());
+
         int codigo3 = (int)(Math.random() * 10000);
         Locacao l3 = new Locacao(codigo3, s1, c3);
+        l3.setTotal(l2.getTotal()+c2.getPreco());
+
+        //ADD LOCACAO
         s1.addLocacao(l1);
         s1.addLocacao(l2);
         s1.addLocacao(l3);
-
-
       
         //SAIDA DE DADOS
         //Locacoes

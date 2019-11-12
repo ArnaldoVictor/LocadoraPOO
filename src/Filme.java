@@ -54,8 +54,9 @@ public class Filme{
 
     public void printCopias(){
 		for (Copia x : this.copias){
-			System.out.println("Filme : "+x.getFilme().getTitulo()+"\nCopias: "+x.getQuantidade());
-		}
+		  System.out.println("Filme : "+x.getFilme().getTitulo()+"\nCopias: "+x.getQuantidade());
+		  System.out.printf("Preco: R$%.2f\n", x.getPreco());
+        }
 	}
 
 }

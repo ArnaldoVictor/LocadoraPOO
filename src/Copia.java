@@ -1,10 +1,12 @@
 public class Copia {
 	private Filme filme;
 	private int quantidade;
+	private Double preco;
 	
-	public Copia(Filme filme, int quantidade){
+	public Copia(Filme filme, int quantidade, Double preco){
 		this.filme = filme;
 		this.quantidade = quantidade;
+		this.preco = preco;
 	}
 	
 	public Filme getFilme() {
@@ -21,6 +23,18 @@ public class Copia {
     
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
+	}
+
+	public Double getPreco(){
+		if(preco == null){
+			return 0.00;
+		}else{
+			return this.preco;
+		}
+	}
+
+	public void setPreco(Double preco){
+		this.preco = preco;
 	}
 
 }
