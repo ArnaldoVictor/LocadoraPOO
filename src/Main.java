@@ -1,4 +1,5 @@
 import java.util.Calendar;
+import java.util.Date;
 
 public class Main{
     public static void main(String[] args){
@@ -17,22 +18,25 @@ public class Main{
         Copia c3 = new Copia(f3, 6, 2.30);
         
         // SOCIO
-        Calendar datas1 = Calendar.getInstance();
+        Date datas1 = Calendar.getInstance().getTime();
+        System.out.println("Data:"+datas1);
         Socio s1 = new Socio("Arnaldo", "12345678901", "55486391225", datas1, end1);
 
         //ALUGUEL
         int codigo1 = (int)(Math.random() * 10000);
-        Locacao l1 = new Locacao(codigo1, s1, c1);
+        Locacao l1 = new Locacao(codigo1, s1, c1, datas1);
         l1.addFilme(c2);
-        l1.setTotal(l1.getTotal()+c1.getPreco()+c2.getPreco());
+        System.out.println(l1.getTotal());
+        l1.setTotal(c1.getPreco()+c2.getPreco());
+       
 
         int codigo2 = (int)(Math.random() * 10000);
-        Locacao l2 = new Locacao(codigo2, s1, c2);
-        l2.setTotal(l2.getTotal()+c2.getPreco());
+        Locacao l2 = new Locacao(codigo2, s1, c2, datas1);
+        l2.setTotal(c2.getPreco());
 
         int codigo3 = (int)(Math.random() * 10000);
-        Locacao l3 = new Locacao(codigo3, s1, c3);
-        l3.setTotal(l2.getTotal()+c2.getPreco());
+        Locacao l3 = new Locacao(codigo3, s1, c3, datas1);
+        l3.setTotal(c2.getPreco());
 
         //ADD LOCACAO
         s1.addLocacao(l1);

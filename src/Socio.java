@@ -1,16 +1,16 @@
 import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.Date;
 
 public class Socio{
     private String nome;
     private String telefone;
     private String rg;
     private String cpf; 
-    private Calendar adesao; 
+    private Date adesao; 
     private Endereco endereco;
     private ArrayList<Locacao> locacoes = new ArrayList<>();
 
-    public Socio(String nome, String rg, String cpf, Calendar adesao, Endereco endereco){
+    public Socio(String nome, String rg, String cpf, Date adesao, Endereco endereco){
         this.nome = nome;
         this.rg = rg;
         this.cpf = cpf;
@@ -42,7 +42,7 @@ public class Socio{
         return this.cpf;
     }
 
-    public Calendar getAdesao(){
+    public Date getAdesao(){
         return this.adesao;
     }
 
